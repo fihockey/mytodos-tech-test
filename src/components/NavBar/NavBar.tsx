@@ -2,12 +2,19 @@ import "./NavBar.scss"
 import ItemInput from "./ItemInput/ItemInput"
 import ResetButton from "./ResetButton/ResetButton"
 
-const NavBar = () => {
+
+type NavBarProps = {
+    addItem: (item: string) => void;
+    resetItem: () => void
+}
+
+
+const NavBar = ({addItem, resetItem} : NavBarProps) => {
 
     return (
         <div className="navbar_container">
-            <ItemInput />
-            <ResetButton />
+            <ItemInput addItem={addItem}/>
+            <ResetButton resetItem={resetItem}/>
         </div>
 
     )
